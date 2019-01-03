@@ -73,6 +73,14 @@ namespace GameEngine {
 		std::vector<Sprite*> sprites;
 		std::vector<Sprite*> spritesToAdd;
 		std::vector<Sprite*> spritesToRemove;
+		/*
+		*  Adds new sprites to the vector and removes the one to be removed
+		*/
+		void handleSprites();
+		/*
+		*  Redraw the sprites and the background
+		*/
+		void redraw();
 	};
 
 }

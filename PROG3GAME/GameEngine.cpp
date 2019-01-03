@@ -33,38 +33,9 @@ namespace GameEngine {
 
 			}// end of inner while
 
-			/*
-			*  Adds new Sprites to the vector
-			*/
-			for (Sprite* s : spritesToAdd) {
-				sprites.push_back(s);
-			}
-			spritesToAdd.clear();
-			/*
-			* Removes the sprites that are to be removed
-			*/
-			for (std::vector<Sprite*>::iterator s = sprites.begin(); s != sprites.end();) {
-				for (Sprite * r : spritesToRemove) {
-					if (*s == r) {
-						s = sprites.erase(s);
-						delete r;
-					}
-					else {
-						s++;
-					}
-				}
-			}
-
-			/*
-			*  Redraws background and sprites
-			*/
-			SDL_RenderClear(system.getRenderer());
-			system.drawBackground();
-			for (Sprite * s : sprites) {
-			//	s->draw();
-			}
-			SDL_RenderPresent(system.getRenderer());
-
+			handleSprites();
+			redraw();
+			
 		}// end of outer while
 	}
 
@@ -97,6 +68,34 @@ namespace GameEngine {
 		}
 		spritesToRemove.push_back(sprite);
 		return true;
+	}
+
+	void GameEngine::handleSprites() {
+		for (Sprite* s : spritesToAdd) {
+			sprites.push_back(s);
+		}
+		spritesToAdd.clear();
+
+		for (std::vector<Sprite*>::iterator s = sprites.begin(); s != sprites.end();) {
+			for (Sprite * r : spritesToRemove) {
+				if (*s == r) {
+					s = sprites.erase(s);
+					delete r;
+				}
+				else {
+					s++;
+				}
+			}
+		}
+	}
+
+	void GameEngine::redraw() {
+		SDL_RenderClear(system.getRenderer());
+		system.drawBackground();
+		for (Sprite * s : sprites) {
+			//	s->draw();
+		}
+		SDL_RenderPresent(system.getRenderer());
 	}
 
 	GameEngine::~GameEngine()

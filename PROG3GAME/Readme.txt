@@ -6,8 +6,8 @@ Sprites in /Sprites/Fixed/ and /Sprites/Animated/
 
 Paths can be changed in setUpGame() in Game.cpp
 
-Music downloaded from https://patrickdearteaga.com/chiptune-8-bit-retro/ published under Creative Commons license. Extended playtime in case someone plays the game longer than 29 seconds.
-Background downloaded https://opengameart.org/content/mountain-at-dusk-background published under Creative Commons license. Author ansimuz
+Music downloaded from https://patrickdearteaga.com/chiptune-8-bit-retro/ published under Creative Commons license. Author Patrick de Arteaga.
+Background downloaded https://opengameart.org/content/mountain-at-dusk-background published under Creative Commons license. Author ansimuz.
 Alien ships and muzzle flashes downloaded from https://opengameart.org/content/space-ship-construction-kit published under Creative Commons license. Author Skorpio.
 Ground defense downloaded from https://opengameart.org/content/saucy-trucks published under Creative Commons license. Author madmarcel.
 Hearts (lifes) downloaded from https://opengameart.org/content/heart-pixel-art published under Creative Commons license. Author DontMind8.
