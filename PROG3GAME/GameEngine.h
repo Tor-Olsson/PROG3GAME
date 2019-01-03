@@ -23,7 +23,7 @@ namespace GameEngine {
 		/*
 		*  The main loop
 		*/
-		void run();
+		void gameLoop();
 
 		/*sets the font
 		*  @param fontPath path to the font to be used
@@ -52,10 +52,27 @@ namespace GameEngine {
 		*  @throws invalid_argument if the sound could not be found
 		*/
 		void setBackgroundMusic(const std::string& musicPath);
+
+		/*
+		*  Adds a new sprite to the vector
+		*  @param newSprite the sprite to be added
+		*  @throws invalid_argument if newSprite is null
+		*/
+		void addSprite(Sprite* newSprite);
+
+		/*
+		Removes a sprite from the vector
+		@param sprite the sprite to be removed
+		@returns true if the sprite was removed, else false
+		*/
+		bool removeSprite(Sprite* sprite);
+
 		~GameEngine();
 
 	private:
 		std::vector<Sprite*> sprites;
+		std::vector<Sprite*> spritesToAdd;
+		std::vector<Sprite*> spritesToRemove;
 	};
 
 }

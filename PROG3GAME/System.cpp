@@ -23,13 +23,12 @@ namespace GameEngine {
 			//try to fetch linux default font? ...else throw
 			throw std::runtime_error(TTF_GetError());
 		}
-		SDL_Init(SDL_INIT_EVERYTHING);
 
 		window = SDL_CreateWindow("The Game", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 200, 200, 0);
 		renderer = SDL_CreateRenderer(window, -1, 0);
 	}
 
-	SDL_Renderer* System::getRenderer() const{
+	SDL_Renderer* System::getRenderer() const {
 		return renderer;
 	}
 
@@ -45,17 +44,17 @@ namespace GameEngine {
 	}
 
 	void System::setBackground(const std::string& imagePath) {
-		SDL_Surface* bgSurface = IMG_Load(imagePath.c_str());
-		if (bgSurface == NULL) {
+		background = IMG_Load(imagePath.c_str());
+		if (background == NULL) {
 			throw std::invalid_argument(IMG_GetError());
 		}
 		else { //else maybe not needed? Does c++ errors break?
-			SDL_Texture* bgTexture = SDL_CreateTextureFromSurface(renderer, bgSurface);
-			SDL_SetWindowSize(window, bgSurface->w, bgSurface->h);
+			backgroundTexture = SDL_CreateTextureFromSurface(renderer, background);
+			SDL_SetWindowSize(window, background->w, background->h);
 			SDL_SetWindowPosition(window, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED);
-			SDL_FreeSurface(bgSurface);
+			SDL_FreeSurface(background);
 			SDL_RenderClear(renderer);
-			SDL_RenderCopy(renderer, bgTexture, NULL, NULL);
+			SDL_RenderCopy(renderer, backgroundTexture, NULL, NULL);
 			SDL_RenderPresent(renderer);
 		}
 	}
@@ -73,6 +72,10 @@ namespace GameEngine {
 
 	void System::setTitle(const std::string& title) {
 		SDL_SetWindowTitle(window, title.c_str());
+	}
+
+	void System::drawBackground() {
+		SDL_RenderCopy(renderer, backgroundTexture, NULL, NULL);
 	}
 
 

@@ -6,9 +6,10 @@ GameEngine::GameEngine game;
 
 /*
 *  Help function to make main() easier to read
+*  Change this method if your search paths are different
 */
 void setUpGame() {
-	game.setTitle("Spelet");
+	game.setTitle("Not Space Invaders");
 	game.setBackground("Images/Backgrounds/parallax-mountain.jpg");
 	game.setBackgroundMusic("Sound/Music/new_hope_ext.mp3");
 }
@@ -16,9 +17,7 @@ void setUpGame() {
 int main(int argc, char** argv) {
 
 	setUpGame();
-	game.run();
-
-	SDL_Delay(3000);
+	game.gameLoop();
 
 	return 0;
 }

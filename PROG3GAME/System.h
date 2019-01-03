@@ -62,6 +62,11 @@ namespace GameEngine {
 		*/
 		void setTitle(const std::string& title);
 
+		/*
+		*  Redraws the background, for the game loop
+		*/
+		void drawBackground();
+
 		~System();
 
 	private:
@@ -69,6 +74,7 @@ namespace GameEngine {
 		SDL_Renderer* renderer;
 		TTF_Font* font;
 		SDL_Surface* background;
+		SDL_Texture* backgroundTexture;
 		Mix_Music* backgroundMusic;
 	};
 
