@@ -32,7 +32,6 @@ namespace GameEngine {
 				}// end of switch
 
 			}// end of inner while
-
 			handleSprites();
 			redraw();
 			
@@ -56,9 +55,11 @@ namespace GameEngine {
 	}
 
 	void GameEngine::addSprite(Sprite* newSprite) {
+		std::cout << "adding sprite from Game" << std::endl;
 		if (newSprite == NULL) {
 			throw std::invalid_argument("addSprite: Null not allowed");
 		}
+
 		spritesToAdd.push_back(newSprite);
 	}
 
@@ -72,28 +73,33 @@ namespace GameEngine {
 
 	void GameEngine::handleSprites() {
 		for (Sprite* s : spritesToAdd) {
+			std::cout << "adding sprite internal" << std::endl;
 			sprites.push_back(s);
 		}
-		spritesToAdd.clear();
 
-		for (std::vector<Sprite*>::iterator s = sprites.begin(); s != sprites.end();) {
-			for (Sprite * r : spritesToRemove) {
-				if (*s == r) {
-					s = sprites.erase(s);
-					delete r;
-				}
-				else {
-					s++;
-				}
-			}
-		}
+		spritesToAdd.clear();
+		//REMOVE - Oändlig LOOP
+		//for (std::vector<Sprite*>::iterator s = sprites.begin(); s != sprites.end();) {
+		//	std::cout << "after for" << std::endl;
+		//	for (Sprite * r : spritesToRemove) {
+		//		if (*s == r) {
+		//			s = sprites.erase(s);
+		//			delete r;
+		//		}
+		//		else {
+		//			s++;
+		//		}
+		//	}
+		//}
 	}
 
 	void GameEngine::redraw() {
 		SDL_RenderClear(system.getRenderer());
 		system.drawBackground();
 		for (Sprite * s : sprites) {
-			//	s->draw();
+			std::cout << "draw loop" << std::endl;
+				s->draw();
+
 		}
 		SDL_RenderPresent(system.getRenderer());
 	}

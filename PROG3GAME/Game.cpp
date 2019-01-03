@@ -1,6 +1,7 @@
 #include <SDL.h>
 
 #include "GameEngine.h"
+#include "EarthDefense.h"
 
 GameEngine::GameEngine game;
 
@@ -14,9 +15,15 @@ void setUpGame() {
 	game.setBackgroundMusic("Sound/Music/new_hope.mp3");
 }
 
+void addSprites() {
+	EarthDefense * bs = new EarthDefense(100, 100);
+	game.addSprite(bs);
+}
+
 int main(int argc, char** argv) {
 
 	setUpGame();
+	addSprites();
 	game.gameLoop();
 
 	return 0;

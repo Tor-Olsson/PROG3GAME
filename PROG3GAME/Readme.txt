@@ -12,6 +12,10 @@ Alien ships and muzzle flashes downloaded from https://opengameart.org/content/s
 Ground defense downloaded from https://opengameart.org/content/saucy-trucks published under Creative Commons license. Author madmarcel.
 Hearts (lifes) downloaded from https://opengameart.org/content/heart-pixel-art published under Creative Commons license. Author DontMind8.
 
+Game specific files:
+Game.cpp
+EarthDefense.cpp/h
+
 
 =====================GameEngine=====================
 

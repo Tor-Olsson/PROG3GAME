@@ -121,11 +121,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="EarthDefense.h" />
+    <ClInclude Include="FixedSprite.h" />
     <ClInclude Include="GameEngine.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="System.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="EarthDefense.cpp" />
+    <ClCompile Include="FixedSprite.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameEngine.cpp" />
     <ClCompile Include="Sprite.cpp" />
