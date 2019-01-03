@@ -81,6 +81,7 @@
     <Link>
       <AdditionalLibraryDirectories>C:\Users\Tor\OneDrive - Stockholm University\HT18\CPROG\SDL2-devel-2.0.9-VC\SDL2-2.0.9\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_mixer.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
