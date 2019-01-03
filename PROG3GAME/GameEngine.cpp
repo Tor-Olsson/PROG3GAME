@@ -14,6 +14,10 @@ namespace GameEngine {
 
 	}
 
+	void GameEngine::setFont(const std::string& fontPath, int size) {
+		system.setFont(fontPath, size);
+	}
+
 	void GameEngine::setTitle(const std::string& title) {
 		system.setTitle(title);
 	}
