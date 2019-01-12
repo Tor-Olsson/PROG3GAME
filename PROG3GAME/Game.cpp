@@ -13,6 +13,7 @@ void setUpGame() {
 	game.setTitle("Not Space Invaders");
 	game.setBackground("Images/Backgrounds/parallax-mountain.jpg");
 	game.setBackgroundMusic("Sound/Music/new_hope.mp3");
+	game.setFont("Fonts/Unique.ttf", 24);
 }
 
 void addSprites() {

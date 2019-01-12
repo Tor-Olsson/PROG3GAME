@@ -63,7 +63,7 @@ namespace GameEngine {
 		void setTitle(const std::string& title);
 
 		/*
-		*  Redraws the background, for the game loop
+		*  Redraws the background, used for the game loop
 		*/
 		void drawBackground();
 

@@ -16,14 +16,6 @@ namespace GameEngine {
 			throw std::runtime_error(TTF_GetError());
 		}
 
-		//Sets default font as 'Arial', only on Windows-computers. The font can be changed using setFont();
-		font = TTF_OpenFont("C:/Windows/Fonts/arial.ttf", 36);
-		if (font == nullptr) {
-			//TODO: 
-			//try to fetch linux default font? ...else throw
-			throw std::runtime_error(TTF_GetError());
-		}
-
 		window = SDL_CreateWindow("The Game", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 200, 200, 0);
 		renderer = SDL_CreateRenderer(window, -1, 0);
 	}
@@ -48,15 +40,15 @@ namespace GameEngine {
 		if (background == NULL) {
 			throw std::invalid_argument(IMG_GetError());
 		}
-		else { //else maybe not needed? Does c++ errors break?
-			backgroundTexture = SDL_CreateTextureFromSurface(renderer, background);
-			SDL_SetWindowSize(window, background->w, background->h);
-			SDL_SetWindowPosition(window, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED);
-			SDL_FreeSurface(background);
-			SDL_RenderClear(renderer);
-			SDL_RenderCopy(renderer, backgroundTexture, NULL, NULL);
-			SDL_RenderPresent(renderer);
-		}
+
+		backgroundTexture = SDL_CreateTextureFromSurface(renderer, background);
+		SDL_SetWindowSize(window, background->w, background->h);
+		SDL_SetWindowPosition(window, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED);
+		SDL_FreeSurface(background);
+		SDL_RenderClear(renderer);
+		SDL_RenderCopy(renderer, backgroundTexture, NULL, NULL);
+		SDL_RenderPresent(renderer);
+
 	}
 
 	void System::setBackgroundMusic(const std::string& musicPath) {
