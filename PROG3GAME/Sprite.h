@@ -8,16 +8,19 @@ namespace GameEngine {
 	class Sprite
 	{
 	public:
+		Sprite(int x, int y, const std::string spritePath);
 		SDL_Rect getRectangle() const;
-		void draw() const {};
-		/*virtual void tick(SDL_Event event);
-		virtual ~Sprite();*/
+		Sprite* getInstance(int x, int y, const std::string spritePath);
+		void draw() const;
+		void tick();
+		 ~Sprite() {};
 	protected:
-		Sprite(int x, int y, int w, int h);
+
 		void setWH(int w, int h);
 	private:
-		SDL_Rect rect;
-		SDL_Surface* spritePicture;
+		SDL_Rect spriteRectangle;
+		SDL_Surface* spriteSurface;
+		SDL_Texture* spriteTexture;
 	};
 }
 

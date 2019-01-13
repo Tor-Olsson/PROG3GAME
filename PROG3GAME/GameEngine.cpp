@@ -2,19 +2,30 @@
 
 #include <stdexcept>
 
+#include "Sprite.h"
+
 #include <iostream>//for test, remove
+
+#define FPS 40
 
 namespace GameEngine {
 
 	GameEngine::GameEngine()
 	{
 	}
-
+	int loopCount = 0;
 	void GameEngine::gameLoop() {
 		bool run = true; 
 		SDL_Event event;
 
+		Sprite* sp = new Sprite(250, 0, "Sprites/Fixed/alien-scout.png");
+		sprites.push_back(sp);
+
+		const int tickIntervall = 1000 / FPS;
+		
 		while (run) {
+
+			Uint32 nextTick = SDL_GetTicks() + tickIntervall;
 			while (SDL_PollEvent(&event)) {
 
 				switch (event.type) {
@@ -24,17 +35,19 @@ namespace GameEngine {
 					break;
 
 				case SDL_KEYDOWN:
-					for (Sprite * s : sprites) {
-						//s->tick(event);
-					}
+
 					break;
 
 				}// end of switch
 
 			}// end of inner while
 			handleSprites();
+			for (Sprite * s : sprites) {
+				s->tick();
+			}
 			redraw();
-			
+			handleFPS(nextTick - SDL_GetTicks());
+
 		}// end of outer while
 	}
 
@@ -77,6 +90,8 @@ namespace GameEngine {
 			sprites.push_back(s);
 		}
 
+
+
 		spritesToAdd.clear();
 		//REMOVE - Oändlig LOOP
 		//for (std::vector<Sprite*>::iterator s = sprites.begin(); s != sprites.end();) {
@@ -98,10 +113,19 @@ namespace GameEngine {
 		system.drawBackground();
 		for (Sprite * s : sprites) {
 			std::cout << "draw loop" << std::endl;
+				
 				s->draw();
-
 		}
+		
 		SDL_RenderPresent(system.getRenderer());
+	}
+
+	void GameEngine::handleFPS(int delay) {
+
+		if (delay > 0) {
+			SDL_Delay(delay);
+		}
+		loopCount++;
 	}
 
 	GameEngine::~GameEngine()

@@ -81,6 +81,10 @@ namespace GameEngine {
 		*  Redraw the sprites and the background
 		*/
 		void redraw();
+		/*
+		*  Handles frames per second to slow down the loop
+		*/
+		void handleFPS(int delay);
 	};
 
 }

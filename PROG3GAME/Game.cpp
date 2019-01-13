@@ -1,7 +1,7 @@
 #include <SDL.h>
 
 #include "GameEngine.h"
-#include "EarthDefense.h"
+
 
 GameEngine::GameEngine game;
 
@@ -17,8 +17,7 @@ void setUpGame() {
 }
 
 void addSprites() {
-	EarthDefense * bs = new EarthDefense(100, 100);
-	game.addSprite(bs);
+
 }
 
 int main(int argc, char** argv) {
