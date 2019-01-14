@@ -36,7 +36,7 @@ namespace GameEngine {
 		/*
 		Handles events in the game loop. Implementation forced to subclasses
 		*/
-		virtual void tick() = 0;
+		virtual void tick(const SDL_Event& event) = 0;
 
 		virtual ~Sprite() { SDL_DestroyTexture(spriteTexture); };
 	protected:
@@ -53,8 +53,16 @@ namespace GameEngine {
 		Sets the width and height of the triangle
 		@param w the width
 		@param h the height
+		POSSIBLY UNUSED
 		*/
 		void setWH(int w, int h);
+
+		/*
+		Changes the position on the screen
+		@param x placement on screen width
+		@param y placement on screen height
+		*/
+		void setPosition(int x, int y);
 
 	private:
 		SDL_Rect spriteRectangle;

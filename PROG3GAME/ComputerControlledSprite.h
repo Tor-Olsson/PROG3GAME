@@ -8,6 +8,7 @@ namespace GameEngine {
 class ComputerControlledSprite : public MovingSprite
 {
 public:
+	virtual void tick(const SDL_Event& event) = 0;
 	~ComputerControlledSprite();
 
 protected:

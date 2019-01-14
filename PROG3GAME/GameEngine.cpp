@@ -5,8 +5,6 @@
 #include "Sprite.h"
 #include "FixedSprite.h"
 
-#include <iostream>//for test, remove
-
 #define FPS 40
 
 namespace GameEngine {
@@ -26,22 +24,16 @@ namespace GameEngine {
 			Uint32 nextTick = SDL_GetTicks() + tickIntervall;
 			while (SDL_PollEvent(&event)) {
 
-				switch (event.type) {
-
-				case SDL_QUIT:
+				if (event.type == SDL_QUIT) {
 					run = false;
-					break;
+				}
 
-				case SDL_KEYDOWN:
-
-					break;
-
-				}// end of switch
+				//kolla kortkommandon
 
 			}// end of inner while
 			handleSprites();
 			for (Sprite * s : sprites) {
-				s->tick();
+				s->tick(event);
 			}
 			redraw();
 			handleFPS(nextTick - SDL_GetTicks());
@@ -66,7 +58,6 @@ namespace GameEngine {
 	}
 
 	void GameEngine::addSprite(Sprite* newSprite) {
-		std::cout << "adding sprite from Game" << std::endl;
 		if (newSprite == NULL) {
 			throw std::invalid_argument("addSprite: Null not allowed");
 		}
@@ -84,7 +75,6 @@ namespace GameEngine {
 
 	void GameEngine::handleSprites() {
 		for (Sprite* s : spritesToAdd) {
-			std::cout << "adding sprite internal" << std::endl;
 			sprites.push_back(s);
 		}
 
@@ -110,8 +100,6 @@ namespace GameEngine {
 		SDL_RenderClear(system.getRenderer());
 		system.drawBackground();
 		for (Sprite * s : sprites) {
-			std::cout << "draw loop" << std::endl;
-				
 				s->draw();
 		}
 		

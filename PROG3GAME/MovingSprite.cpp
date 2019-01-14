@@ -6,9 +6,6 @@ namespace GameEngine {
 	{
 	}
 
-	void MovingSprite::tick() {
-		//do something
-	}
 
 	MovingSprite::~MovingSprite()
 	{

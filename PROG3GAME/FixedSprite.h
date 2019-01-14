@@ -18,7 +18,7 @@ namespace GameEngine {
 
 
 		~FixedSprite();
-		void tick();
+		void tick(const SDL_Event& event) {};
 
 	protected:
 		FixedSprite(int x, int y, const std::string spritePath);

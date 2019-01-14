@@ -22,6 +22,11 @@ namespace GameEngine {
 		spriteRectangle.w = w;
 		spriteRectangle.h = h;
 	}
+
+	void Sprite::setPosition(int x, int y) {
+		spriteRectangle.x = x;
+		spriteRectangle.y = y;
+	}
 	   
 	SDL_Rect Sprite::getRectangle() const {
 		return spriteRectangle;

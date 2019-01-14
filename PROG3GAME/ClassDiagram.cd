@@ -29,7 +29,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="GameEngine::MovingSprite">
-    <Position X="6.75" Y="4.25" Width="1.5" />
+    <Position X="6.75" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAA=</HashCode>
       <FileName>MovingSprite.h</FileName>
@@ -60,15 +60,22 @@
     <Position X="8" Y="6.75" Width="1.5" />
     <InheritanceLine Type="GameEngine::MovingSprite" FixedToPoint="true">
       <Path>
-        <Point X="7.5" Y="5.867" />
+        <Point X="7.5" Y="5.617" />
         <Point X="7.5" Y="6.375" />
         <Point X="8.875" Y="6.375" />
         <Point X="8.875" Y="6.75" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>gAAAAAAAQAAACAAAAIAAAAAQAAAQAAAAAAAAAAAAAAA=</HashCode>
       <FileName>PlayerControlledSprite.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EarthDefense">
+    <Position X="8" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACQCAAAAIAAAAAAAAEAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>EarthDefense.h</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

@@ -1,9 +1,13 @@
 #include <SDL.h>
 
+#include <iostream> //test
+#include <ctime> //for random
+
 #include "GameEngine.h"
 #include "Life.h"
 #include "AlienScout.h"
 #include "EarthDefense.h"
+
 #define LIVES 3
 
 GameEngine::GameEngine game;
@@ -35,7 +39,10 @@ void addEnemies() {
 	//height = 0;
 	//width = random
 	//??randomisera spawning time? görs det i loopen eller i spelet?
-	AlienScout* ccs = AlienScout::getInstance(250, 0);
+	//c++ "random" does not seem to be so random
+	std::srand(std::time(nullptr));
+	int random = std::rand() % 700;
+	AlienScout* ccs = AlienScout::getInstance(random, 0);
 	game.addSprite(ccs);
 }
 
@@ -44,10 +51,10 @@ void addPlayer() {
 	game.addSprite(player);
 }
 
+
 int main(int argc, char** argv) {
 
 	setUpGame();
-	
 	addLifes();
 	addEnemies();
 	addPlayer();
