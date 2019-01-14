@@ -1,6 +1,7 @@
 #include "GameEngine.h"
 
 #include <stdexcept>
+#include <iostream> //test
 
 #include "Sprite.h"
 #include "FixedSprite.h"
@@ -31,9 +32,15 @@ namespace GameEngine {
 				//kolla kortkommandon
 
 			}// end of inner while
+
+
+
 			handleSprites();
 			for (Sprite * s : sprites) {
 				s->tick(event);
+			}
+			for (Sprite * s : sprites) {
+				std::cout << s->detectCollision(sprites) << "\n";				
 			}
 			redraw();
 			handleFPS(nextTick - SDL_GetTicks());

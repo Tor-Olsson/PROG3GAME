@@ -7,6 +7,7 @@
 #include "Life.h"
 #include "AlienScout.h"
 #include "EarthDefense.h"
+#include "EarthDefenseMissile.h"
 
 #define LIVES 3
 
@@ -49,6 +50,9 @@ void addEnemies() {
 void addPlayer() {
 	EarthDefense* player = EarthDefense::getInstance(480, 480);
 	game.addSprite(player);
+
+	//EarthDefenseMissile* edm = EarthDefenseMissile::getInstance(480, 480);
+	//game.addSprite(edm);
 }
 
 

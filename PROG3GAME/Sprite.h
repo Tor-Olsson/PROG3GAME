@@ -3,6 +3,7 @@
 
 
 #include <stdexcept>
+#include <vector>
 
 #include <SDL.h>
 #include "System.h"
@@ -32,6 +33,15 @@ namespace GameEngine {
 		Implemented in superclass because all sprites have a picture that needs to be redrawn
 		*/
 		void draw() const;
+
+		/*
+		Changes the sprite (image)
+		@param spritePath the path to the new image
+		@throws invalid_argument if the sprite can't be found
+		*/
+		void changeSprite(const std::string spritePath);
+
+		bool detectCollision(const std::vector<Sprite*> sprites);
 			   
 		/*
 		Handles events in the game loop. Implementation forced to subclasses

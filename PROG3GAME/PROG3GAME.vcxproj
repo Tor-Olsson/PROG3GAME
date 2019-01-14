@@ -124,6 +124,7 @@
     <ClInclude Include="AlienScout.h" />
     <ClInclude Include="ComputerControlledSprite.h" />
     <ClInclude Include="EarthDefense.h" />
+    <ClInclude Include="EarthDefenseMissile.h" />
     <ClInclude Include="FixedSprite.h" />
     <ClInclude Include="GameEngine.h" />
     <ClInclude Include="Life.h" />
@@ -136,6 +137,7 @@
     <ClCompile Include="AlienScout.cpp" />
     <ClCompile Include="ComputerControlledSprite.cpp" />
     <ClCompile Include="EarthDefense.cpp" />
+    <ClCompile Include="EarthDefenseMissile.cpp" />
     <ClCompile Include="FixedSprite.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameEngine.cpp" />

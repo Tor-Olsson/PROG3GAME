@@ -1,5 +1,7 @@
 #include "Sprite.h"
 
+#include <iostream>
+
 namespace GameEngine {
 
 	Sprite::Sprite(int x, int y, const std::string spritePath)	{
@@ -12,6 +14,33 @@ namespace GameEngine {
 		spriteTexture = SDL_CreateTextureFromSurface(system.getRenderer(), spriteSurface);
 		spriteRectangle = { x, y, spriteSurface->w, spriteSurface->h };
 		SDL_FreeSurface(spriteSurface);
+	}
+
+	void Sprite::changeSprite(const std::string spritePath) {
+		SDL_Surface* spriteSurface = IMG_Load(spritePath.c_str());
+
+		if (spriteSurface == NULL) {
+			throw std::invalid_argument("Sprite-picture not found");
+		}
+
+		spriteTexture = SDL_CreateTextureFromSurface(system.getRenderer(), spriteSurface);
+		spriteRectangle = { spriteRectangle.x, spriteRectangle.y, spriteSurface->w, spriteSurface->h };
+		SDL_FreeSurface(spriteSurface);
+	}
+
+
+	bool Sprite::detectCollision(const std::vector<Sprite*> sprites) {
+		for (Sprite* s : sprites) {
+			
+			if (this != s) {
+				SDL_bool collision = SDL_HasIntersection(&getRectangle(), &s->getRectangle());
+
+				if (collision) {
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 	void Sprite::draw() const {

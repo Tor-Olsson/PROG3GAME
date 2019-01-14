@@ -19,11 +19,13 @@ void EarthDefense::tick(const SDL_Event& event) {
 	case SDL_KEYDOWN:
 		switch (event.key.keysym.sym) {
 		case SDLK_RIGHT: {
+			changeSprite("Sprites/ground_defense_inverted.png");
 			int xPos = getRectangle().x + SPEED;
 			setPosition(xPos, getRectangle().y);
 			break;
 		}
 		case SDLK_LEFT: {
+			changeSprite("Sprites/ground_defense.png");
 			int xPos = getRectangle().x - SPEED;
 			setPosition(xPos, getRectangle().y);
 			break;
