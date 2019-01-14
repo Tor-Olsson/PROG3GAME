@@ -18,7 +18,7 @@ Game specific files:
 Game.cpp
 EarthDefense.*
 AlienScout.*
-Lives.*
+Life.*
 
 
 =====================GameEngine=====================

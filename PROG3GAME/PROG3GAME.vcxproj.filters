@@ -39,6 +39,12 @@
     <ClInclude Include="AlienScout.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="PlayerControlledSprite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EarthDefense.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameEngine.cpp">
@@ -66,6 +72,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="AlienScout.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerControlledSprite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EarthDefense.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
