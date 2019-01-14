@@ -42,6 +42,7 @@ namespace GameEngine {
 		void changeSprite(const std::string spritePath);
 
 		bool detectCollision(const std::vector<Sprite*> sprites);
+		bool getCollision();
 			   
 		/*
 		Handles events in the game loop. Implementation forced to subclasses
@@ -77,6 +78,7 @@ namespace GameEngine {
 	private:
 		SDL_Rect spriteRectangle;
 		SDL_Texture* spriteTexture;
+		bool pang;
 	};
 }
 

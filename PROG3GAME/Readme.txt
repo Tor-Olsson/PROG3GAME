@@ -7,6 +7,10 @@ Fonts in /Fonts/
 
 Paths can be changed in setUpGame() in Game.cpp
 
+Controls:
+Left and right arrow to move the tank.
+Up arrow to shoot.
+
 Music downloaded from https://patrickdearteaga.com/chiptune-8-bit-retro/ published under Creative Commons license. Author Patrick de Arteaga.
 Background downloaded https://opengameart.org/content/mountain-at-dusk-background published under Creative Commons license. Author ansimuz.
 Alien ships and muzzle flashes downloaded from https://opengameart.org/content/space-ship-construction-kit published under Creative Commons license. Author Skorpio.
@@ -17,6 +21,7 @@ Font downloaded from https://fontlibrary.org/en/font/unique published under SIL 
 Game specific files:
 Game.cpp
 EarthDefense.*
+EarthDefenseMissile.*
 AlienScout.*
 Life.*
 

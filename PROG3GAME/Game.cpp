@@ -20,7 +20,7 @@ GameEngine::GameEngine game;
 void setUpGame() {
 	game.setTitle("Not Space Invaders");
 	game.setBackground("Images/Backgrounds/parallax-mountain.jpg");
-	game.setBackgroundMusic("Sound/Music/new_hope.mp3");
+	//game.setBackgroundMusic("Sound/Music/new_hope.mp3");
 	game.setFont("Fonts/Unique.ttf", 24);
 }
 
@@ -43,7 +43,7 @@ void addEnemies() {
 	//c++ "random" does not seem to be so random
 	std::srand(std::time(nullptr));
 	int random = std::rand() % 700;
-	AlienScout* ccs = AlienScout::getInstance(random, 0);
+	AlienScout* ccs = AlienScout::getInstance(game, random, 0);
 	game.addSprite(ccs);
 }
 

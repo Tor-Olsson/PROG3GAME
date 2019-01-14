@@ -4,19 +4,21 @@
 #include <vector>
 
 #include "ComputerControlledSprite.h"
+#include "GameEngine.h"
 
 class AlienScout : public GameEngine::ComputerControlledSprite
 {
 public:
-	static AlienScout* getInstance(int x, int y);
+	static AlienScout* getInstance(GameEngine::GameEngine& g, int x, int y);
 	void tick(const SDL_Event& event);
 
 	~AlienScout();
 
 protected:
-	AlienScout(int x, int y, const std::string spritePath);
+	AlienScout(GameEngine::GameEngine& g, int x, int y, const std::string spritePath);
 
 private:
+	GameEngine::GameEngine& game;
 	static const std::string spritePath;
 };
 

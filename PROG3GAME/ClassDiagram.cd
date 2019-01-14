@@ -10,7 +10,7 @@
   <Class Name="GameEngine::Sprite">
     <Position X="6" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABCAAAAAAAAACAAAAIAAAAAgAAAACAQAAAgAAAAAAI=</HashCode>
+      <HashCode>ABBCAAAAAAAAACAAQAIAAAACgAAAACAQAAAgAAAAAAM=</HashCode>
       <FileName>Sprite.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -45,14 +45,14 @@
   <Class Name="GameEngine::ComputerControlledSprite">
     <Position X="5.5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAgAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AABAAAAAAAAAAAAAgAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ComputerControlledSprite.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AlienScout">
     <Position X="5.5" Y="9" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAQAAAAACAAABAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <HashCode>AABAQAAAAACAAABAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
       <FileName>AlienScout.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -67,14 +67,14 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>gAAAAAAAQAAACAAAAIAAAAAQAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>gABAAAAAQAAACAAAAIAAAAAQAAAQAAAAAAAAAAAAAAA=</HashCode>
       <FileName>PlayerControlledSprite.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="EarthDefense">
     <Position X="8" Y="9.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAACQCAAAAIAAAAAAAAEAAAQAAAAAAAAAAAA=</HashCode>
+      <HashCode>AABAAAAAAACQCAAAAIAAAAAAAAEAAAYYAAAAAAAAAAA=</HashCode>
       <FileName>EarthDefense.h</FileName>
     </TypeIdentifier>
   </Class>

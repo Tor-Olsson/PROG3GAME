@@ -36,11 +36,17 @@ namespace GameEngine {
 				SDL_bool collision = SDL_HasIntersection(&getRectangle(), &s->getRectangle());
 
 				if (collision) {
+					pang = true;
 					return true;
 				}
 			}
 		}
+		pang = false;
 		return false;
+	}
+
+	bool Sprite::getCollision() {
+		return pang;
 	}
 
 	void Sprite::draw() const {

@@ -19,6 +19,8 @@ EarthDefense* EarthDefense::getInstance(GameEngine::GameEngine& g, int x, int y)
 
 void EarthDefense::tick(const SDL_Event& event) {
 
+
+
 	//delay on shots
 	if (reloading) {
 		if (reloadTime == RELOADTIME) {

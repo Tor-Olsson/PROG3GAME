@@ -76,6 +76,7 @@ namespace GameEngine {
 		if (sprites.empty() || sprite == NULL) {
 			return false;
 		}
+		std::cout << "remove \n";
 		spritesToRemove.push_back(sprite);
 		return true;
 	}
@@ -84,23 +85,22 @@ namespace GameEngine {
 		for (Sprite* s : spritesToAdd) {
 			sprites.push_back(s);
 		}
-
-
-
 		spritesToAdd.clear();
-		//REMOVE - Oändlig LOOP
-		//for (std::vector<Sprite*>::iterator s = sprites.begin(); s != sprites.end();) {
-		//	std::cout << "after for" << std::endl;
-		//	for (Sprite * r : spritesToRemove) {
-		//		if (*s == r) {
-		//			s = sprites.erase(s);
-		//			delete r;
-		//		}
-		//		else {
-		//			s++;
-		//		}
-		//	}
-		//}
+
+		for (Sprite * r : spritesToRemove) {
+			for (std::vector<Sprite*>::iterator s = sprites.begin(); s != sprites.end();) {
+				std::cout << "after for" << std::endl;
+
+				if (*s == r) {
+					s = sprites.erase(s);
+					delete r;
+				}
+				else {
+					s++;
+				}
+			}
+		}
+		spritesToRemove.clear();
 	}
 
 	void GameEngine::redraw() {
