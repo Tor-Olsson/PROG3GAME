@@ -48,7 +48,7 @@ void addEnemies() {
 }
 
 void addPlayer() {
-	EarthDefense* player = EarthDefense::getInstance(480, 480);
+	EarthDefense* player = EarthDefense::getInstance(game, 480, 480);
 	game.addSprite(player);
 
 	//EarthDefenseMissile* edm = EarthDefenseMissile::getInstance(480, 480);

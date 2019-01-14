@@ -15,11 +15,11 @@ namespace GameEngine {
 	}
 	int loopCount = 0;
 	void GameEngine::gameLoop() {
-		bool run = true; 
+		bool run = true;
 		SDL_Event event;
 
 		const int tickIntervall = 1000 / FPS;
-		
+
 		while (run) {
 
 			Uint32 nextTick = SDL_GetTicks() + tickIntervall;
@@ -40,7 +40,7 @@ namespace GameEngine {
 				s->tick(event);
 			}
 			for (Sprite * s : sprites) {
-				std::cout << s->detectCollision(sprites) << "\n";				
+				s->detectCollision(sprites);
 			}
 			redraw();
 			handleFPS(nextTick - SDL_GetTicks());
@@ -107,9 +107,9 @@ namespace GameEngine {
 		SDL_RenderClear(system.getRenderer());
 		system.drawBackground();
 		for (Sprite * s : sprites) {
-				s->draw();
+			s->draw();
 		}
-		
+
 		SDL_RenderPresent(system.getRenderer());
 	}
 
