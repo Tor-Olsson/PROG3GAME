@@ -1,8 +1,7 @@
 #include <SDL.h>
 
 #include "GameEngine.h"
-#include "Sprite.h"
-#include "FixedSprite.h"
+#include "Life.h"
 #define LIVES 3
 
 GameEngine::GameEngine game;
@@ -18,17 +17,31 @@ void setUpGame() {
 	game.setFont("Fonts/Unique.ttf", 24);
 }
 
-void addSprites() {
-	//for int i = 0; i<lives;i++
-	//add new LifeSprite
+
+void addLifes() {
+	int width = 980;
+	int height = 10;
+
+	for (int i = 0; i < LIVES; i++) {
+		Life* fs = Life::getInstance(width, height);
+		game.addSprite(fs);
+		width -= 40;
+	}
+}
+
+void addEnemies() {
+
+}
+
+void addPlayer() {
+
 }
 
 int main(int argc, char** argv) {
 
 	setUpGame();
-	GameEngine::FixedSprite* fs = GameEngine::FixedSprite::getInstance(250, 0, "Sprites/alien-scout.png");
-	game.addSprite(fs);
-	addSprites();
+	
+	addLifes();
 	game.gameLoop();
 
 	return 0;

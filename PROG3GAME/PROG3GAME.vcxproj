@@ -123,6 +123,7 @@
   <ItemGroup>
     <ClInclude Include="FixedSprite.h" />
     <ClInclude Include="GameEngine.h" />
+    <ClInclude Include="Life.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="System.h" />
   </ItemGroup>
@@ -130,6 +131,7 @@
     <ClCompile Include="FixedSprite.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameEngine.cpp" />
+    <ClCompile Include="Life.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="System.cpp" />
   </ItemGroup>
