@@ -2,7 +2,7 @@ Author Tor Olsson / tool2256
 ======================The Game======================
 Music should be in /Sound/Music/
 Background image in /Images/Backgrounds/
-Sprites in /Sprites/Fixed/ and /Sprites/Animated/
+Sprites in /Sprites/
 Fonts in /Fonts/
 
 Paths can be changed in setUpGame() in Game.cpp
@@ -16,13 +16,15 @@ Font downloaded from https://fontlibrary.org/en/font/unique published under SIL 
 
 Game specific files:
 Game.cpp
-EarthDefense.cpp/h
+EarthDefense.*
+AlienScout.*
+Lives.*
 
 
 =====================GameEngine=====================
 
 Functions that should be called to make use of GameEngine:
 GameEngine.setTitle("The title of your game");
-GameEngine.setBackground("Path to your image");
+GameEngine.setBackground("Path to your background image");
 GameEngine.setBackgroundMusic("Path to your soundfile"); 
 GameEngine.setFont("Path to your font");

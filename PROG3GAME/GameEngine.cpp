@@ -3,6 +3,7 @@
 #include <stdexcept>
 
 #include "Sprite.h"
+#include "FixedSprite.h"
 
 #include <iostream>//for test, remove
 
@@ -17,9 +18,6 @@ namespace GameEngine {
 	void GameEngine::gameLoop() {
 		bool run = true; 
 		SDL_Event event;
-
-		Sprite* sp = new Sprite(250, 0, "Sprites/Fixed/alien-scout.png");
-		sprites.push_back(sp);
 
 		const int tickIntervall = 1000 / FPS;
 		

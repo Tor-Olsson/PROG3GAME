@@ -3,22 +3,29 @@
   <Class Name="GameEngine::GameEngine">
     <Position X="8.5" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BAAAAAAAAAAABIAAACAABAEgABAAgEAQAAAAAACAAAA=</HashCode>
+      <HashCode>BAAAAAAAAAAABIAAACAABAEgABAAgEAQgAAAAACAAAA=</HashCode>
       <FileName>GameEngine.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameEngine::Sprite">
     <Position X="10.25" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAACAAAAIAIAAAgAAAAAAQAAACAAAAAAI=</HashCode>
+      <HashCode>AABCAAAAAAAAACAAAAIAAAAAAAAAACQQAAAgAAAAAAI=</HashCode>
       <FileName>Sprite.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameEngine::System">
     <Position X="6.5" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAIAABAAAAGAABAAAAAAAgBQIAAAgAAAAoAA=</HashCode>
+      <HashCode>AAIAAAAAAIAABAAAAGAABAAAAAAAgBQIAAAgAAAAgAA=</HashCode>
       <FileName>System.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameEngine::FixedSprite">
+    <Position X="13" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAACA=</HashCode>
+      <FileName>FixedSprite.h</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

@@ -1,7 +1,9 @@
 #include <SDL.h>
 
 #include "GameEngine.h"
-
+#include "Sprite.h"
+#include "FixedSprite.h"
+#define LIVES 3
 
 GameEngine::GameEngine game;
 
@@ -17,12 +19,15 @@ void setUpGame() {
 }
 
 void addSprites() {
-
+	//for int i = 0; i<lives;i++
+	//add new LifeSprite
 }
 
 int main(int argc, char** argv) {
 
 	setUpGame();
+	GameEngine::FixedSprite* fs = GameEngine::FixedSprite::getInstance(250, 0, "Sprites/alien-scout.png");
+	game.addSprite(fs);
 	addSprites();
 	game.gameLoop();
 

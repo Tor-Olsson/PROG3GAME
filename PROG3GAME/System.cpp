@@ -36,7 +36,8 @@ namespace GameEngine {
 	}
 
 	void System::setBackground(const std::string& imagePath) {
-		background = IMG_Load(imagePath.c_str());
+		SDL_Surface* background = IMG_Load(imagePath.c_str());
+
 		if (background == NULL) {
 			throw std::invalid_argument(IMG_GetError());
 		}
@@ -67,14 +68,17 @@ namespace GameEngine {
 	}
 
 	void System::drawBackground() {
+		if (backgroundTexture == NULL) {
+			throw std::invalid_argument("background not initialized");
+		}
 		SDL_RenderCopy(renderer, backgroundTexture, NULL, NULL);
 	}
-
 
 	System::~System()
 	{
 		SDL_DestroyRenderer(renderer);
 		SDL_DestroyWindow(window);
+		SDL_DestroyTexture(backgroundTexture);
 		TTF_CloseFont(font);
 		Mix_CloseAudio();
 		TTF_Quit();

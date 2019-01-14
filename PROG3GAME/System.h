@@ -64,6 +64,7 @@ namespace GameEngine {
 
 		/*
 		*  Redraws the background, used for the game loop
+		*  @throw invalid_argument if the backgroundTexture is null
 		*/
 		void drawBackground();
 
@@ -73,7 +74,6 @@ namespace GameEngine {
 		SDL_Window* window;
 		SDL_Renderer* renderer;
 		TTF_Font* font;
-		SDL_Surface* background;
 		SDL_Texture* backgroundTexture;
 		Mix_Music* backgroundMusic;
 	};
