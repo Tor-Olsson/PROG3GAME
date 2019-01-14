@@ -121,17 +121,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AlienScout.h" />
+    <ClInclude Include="ComputerControlledSprite.h" />
     <ClInclude Include="FixedSprite.h" />
     <ClInclude Include="GameEngine.h" />
     <ClInclude Include="Life.h" />
+    <ClInclude Include="MovingSprite.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="System.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AlienScout.cpp" />
+    <ClCompile Include="ComputerControlledSprite.cpp" />
     <ClCompile Include="FixedSprite.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameEngine.cpp" />
     <ClCompile Include="Life.cpp" />
+    <ClCompile Include="MovingSprite.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="System.cpp" />
   </ItemGroup>

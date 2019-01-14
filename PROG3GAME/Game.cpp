@@ -2,6 +2,7 @@
 
 #include "GameEngine.h"
 #include "Life.h"
+#include "AlienScout.h"
 #define LIVES 3
 
 GameEngine::GameEngine game;
@@ -30,7 +31,9 @@ void addLifes() {
 }
 
 void addEnemies() {
-
+	//height = 0;
+	//width = random
+	//??randomisera spawning time? görs det i loopen eller i spelet?
 }
 
 void addPlayer() {
@@ -42,6 +45,8 @@ int main(int argc, char** argv) {
 	setUpGame();
 	
 	addLifes();
+	AlienScout* ccs = AlienScout::getInstance(250, 0);
+	game.addSprite(ccs);
 	game.gameLoop();
 
 	return 0;
