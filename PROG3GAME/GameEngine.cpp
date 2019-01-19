@@ -1,7 +1,6 @@
 #include "GameEngine.h"
 
 #include <stdexcept>
-#include <iostream> //test
 
 #include "Sprite.h"
 #include "FixedSprite.h"
@@ -76,7 +75,6 @@ namespace GameEngine {
 		if (sprites.empty() || sprite == NULL) {
 			return false;
 		}
-		std::cout << "removeSprite \n";
 		spritesToRemove.push_back(sprite);
 		return true;
 	}

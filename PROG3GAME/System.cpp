@@ -2,8 +2,6 @@
 
 #include <stdexcept>
 
-#include <iostream>//for testing, remove
-
 namespace GameEngine {
 
 	System::System()
