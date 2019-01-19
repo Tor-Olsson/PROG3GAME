@@ -68,6 +68,9 @@ namespace GameEngine {
 		*/
 		void drawBackground();
 
+		int getWidth() { return w; }
+		int getHeight() { return h; }
+
 		~System();
 
 	private:
@@ -76,6 +79,8 @@ namespace GameEngine {
 		TTF_Font* font;
 		SDL_Texture* backgroundTexture;
 		Mix_Music* backgroundMusic;
+		int w;
+		int h;
 	};
 
 	extern System system;

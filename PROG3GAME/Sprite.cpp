@@ -10,7 +10,8 @@ namespace GameEngine {
 		if (spriteSurface == NULL) {
 			throw std::invalid_argument("Sprite-picture not found");		
 		}
-
+		w = system.getWidth();
+		h = system.getHeight();
 		spriteTexture = SDL_CreateTextureFromSurface(system.getRenderer(), spriteSurface);
 		spriteRectangle = { x, y, spriteSurface->w, spriteSurface->h };
 		SDL_FreeSurface(spriteSurface);
@@ -36,17 +37,19 @@ namespace GameEngine {
 				SDL_bool collision = SDL_HasIntersection(&getRectangle(), &s->getRectangle());
 
 				if (collision) {
+					collisioned = s;
 					pang = true;
 					return true;
 				}
 			}
 		}
 		pang = false;
+		collisioned = nullptr;
 		return false;
 	}
 
-	bool Sprite::getCollision() {
-		return pang;
+	Sprite* Sprite::getCollision() {
+		return collisioned;
 	}
 
 	void Sprite::draw() const {
@@ -56,6 +59,14 @@ namespace GameEngine {
 	void Sprite::setWH(int w, int h) {
 		spriteRectangle.w = w;
 		spriteRectangle.h = h;
+	}
+
+	bool Sprite::outOfScreen() {
+		if (spriteRectangle.x > w || spriteRectangle.x < 0)
+			return true;
+		if (spriteRectangle.y > h || spriteRectangle.y < 0)
+			return true;
+		return false;
 	}
 
 	void Sprite::setPosition(int x, int y) {

@@ -42,8 +42,11 @@ namespace GameEngine {
 			throw std::invalid_argument(IMG_GetError());
 		}
 
+		w = background->w;
+		h = background->h;
+
 		backgroundTexture = SDL_CreateTextureFromSurface(renderer, background);
-		SDL_SetWindowSize(window, background->w, background->h);
+		SDL_SetWindowSize(window, w, h);
 		SDL_SetWindowPosition(window, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED);
 		SDL_FreeSurface(background);
 		SDL_RenderClear(renderer);

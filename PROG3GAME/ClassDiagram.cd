@@ -10,7 +10,7 @@
   <Class Name="GameEngine::Sprite">
     <Position X="6" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABBCAAAAAAAAACAAQAIAAAACgAAAACAQAAAgAAAAAAM=</HashCode>
+      <HashCode>ABBCAABAAAAAACAAQAIAAAACgAAAACAQAAAAAAAAAAM=</HashCode>
       <FileName>Sprite.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -29,7 +29,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="GameEngine::MovingSprite">
-    <Position X="6.75" Y="4" Width="1.5" />
+    <Position X="6.75" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAA=</HashCode>
       <FileName>MovingSprite.h</FileName>
@@ -52,7 +52,7 @@
   <Class Name="AlienScout">
     <Position X="5.5" Y="9" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABAQAAAAACAAABAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <HashCode>AABAQAAAAACAAABAAAAAAAAAAAAAAAQIAAAAAAAEAAA=</HashCode>
       <FileName>AlienScout.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -60,9 +60,9 @@
     <Position X="8" Y="6.75" Width="1.5" />
     <InheritanceLine Type="GameEngine::MovingSprite" FixedToPoint="true">
       <Path>
-        <Point X="7.5" Y="5.617" />
-        <Point X="7.5" Y="6.375" />
-        <Point X="8.875" Y="6.375" />
+        <Point X="7.5" Y="6.617" />
+        <Point X="7.5" Y="6.656" />
+        <Point X="8.875" Y="6.656" />
         <Point X="8.875" Y="6.75" />
       </Path>
     </InheritanceLine>

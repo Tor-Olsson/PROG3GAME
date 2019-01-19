@@ -4,6 +4,7 @@
 #include <vector>
 
 #include "ComputerControlledSprite.h"
+#include "EarthDefenseMissile.h"
 #include "GameEngine.h"
 
 class AlienScout : public GameEngine::ComputerControlledSprite

@@ -2,6 +2,7 @@
 #define GAMEENGINE_H
 
 #include <vector>
+#include <ctime>
 
 #include <SDL.h>
 
@@ -60,6 +61,7 @@ namespace GameEngine {
 		@throws invalid_argument if newSprite is null
 		*/
 		void addSprite(Sprite* newSprite);
+
 
 		/*
 		Removes a sprite from the vector

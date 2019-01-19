@@ -20,7 +20,7 @@ GameEngine::GameEngine game;
 void setUpGame() {
 	game.setTitle("Not Space Invaders");
 	game.setBackground("Images/Backgrounds/parallax-mountain.jpg");
-	//game.setBackgroundMusic("Sound/Music/new_hope.mp3");
+	game.setBackgroundMusic("Sound/Music/new_hope.mp3");
 	game.setFont("Fonts/Unique.ttf", 24);
 }
 
@@ -51,8 +51,6 @@ void addPlayer() {
 	EarthDefense* player = EarthDefense::getInstance(game, 480, 480);
 	game.addSprite(player);
 
-	//EarthDefenseMissile* edm = EarthDefenseMissile::getInstance(480, 480);
-	//game.addSprite(edm);
 }
 
 
@@ -60,9 +58,9 @@ int main(int argc, char** argv) {
 
 	setUpGame();
 	addLifes();
-	addEnemies();
 	addPlayer();
-	game.gameLoop();
+	addEnemies();
 
+	game.gameLoop();
 	return 0;
 }

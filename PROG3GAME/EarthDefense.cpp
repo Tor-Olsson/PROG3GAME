@@ -5,6 +5,7 @@
 //Increase SPEED if you want to move faster :)
 #define SPEED 5
 #define RELOADTIME 25
+#define SPAWNTIME 100
 
 const std::string EarthDefense::spritePath = "Sprites/ground_defense.png";
 
@@ -18,6 +19,21 @@ EarthDefense* EarthDefense::getInstance(GameEngine::GameEngine& g, int x, int y)
 }
 
 void EarthDefense::tick(const SDL_Event& event) {
+
+	if (getCollision() != nullptr && typeid(*getCollision()) == typeid(AlienScout)) {
+		game.removeSprite(getCollision());
+		game.removeSprite(this);
+	}
+
+	//Add new enemies
+	if (spawnTime == SPAWNTIME) {
+		int random = std::rand() % 700;
+		
+		game.addSprite(AlienScout::getInstance(game, random + 50, 0) );
+		spawnTime = 0;
+	}
+	else
+		spawnTime++;
 
 
 
@@ -51,13 +67,13 @@ void EarthDefense::tick(const SDL_Event& event) {
 			if (!reloading) {
 				reloading = true;
 				reloadTime = 0;
-				EarthDefenseMissile* missile = EarthDefenseMissile::getInstance(getRectangle().x, getRectangle().y);
-				game.addSprite(missile);
+				game.addSprite(EarthDefenseMissile::getInstance(game, getRectangle().x, getRectangle().y));
 			}
 			break;
 		}
 		}
 	}
+
 }
 
 	void EarthDefense::keyDown(const SDL_Event& event) {

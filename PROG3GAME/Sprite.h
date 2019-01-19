@@ -20,7 +20,7 @@ namespace GameEngine {
 		/*
 		Forbids allocation through = operator
 		*/
-		const Sprite& operator = (const Sprite&) = delete;
+		//const Sprite& operator = (const Sprite&) = delete;
 
 		/*
 		returns the rectangle
@@ -42,7 +42,8 @@ namespace GameEngine {
 		void changeSprite(const std::string spritePath);
 
 		bool detectCollision(const std::vector<Sprite*> sprites);
-		bool getCollision();
+		Sprite* getCollision();
+		bool outOfScreen();
 			   
 		/*
 		Handles events in the game loop. Implementation forced to subclasses
@@ -79,6 +80,9 @@ namespace GameEngine {
 		SDL_Rect spriteRectangle;
 		SDL_Texture* spriteTexture;
 		bool pang;
+		Sprite* collisioned;
+		int w;
+		int h;
 	};
 }
 

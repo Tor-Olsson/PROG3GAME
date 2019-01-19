@@ -76,7 +76,7 @@ namespace GameEngine {
 		if (sprites.empty() || sprite == NULL) {
 			return false;
 		}
-		std::cout << "remove \n";
+		std::cout << "removeSprite \n";
 		spritesToRemove.push_back(sprite);
 		return true;
 	}
@@ -88,10 +88,11 @@ namespace GameEngine {
 		spritesToAdd.clear();
 
 		for (Sprite * r : spritesToRemove) {
+
 			for (std::vector<Sprite*>::iterator s = sprites.begin(); s != sprites.end();) {
-				std::cout << "after for" << std::endl;
 
 				if (*s == r) {
+
 					s = sprites.erase(s);
 					delete r;
 				}

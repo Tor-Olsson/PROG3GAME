@@ -1,8 +1,11 @@
 #ifndef EARTHDEFENSE_H
 #define EARTHDEFENSE_H
 
+#include <ctime>
+
 #include "PlayerControlledSprite.h"
 #include "EarthDefenseMissile.h"
+#include "AlienScout.h"
 #include "GameEngine.h"
 
 class EarthDefense : public GameEngine::PlayerControlledSprite
@@ -22,6 +25,7 @@ private:
 	GameEngine::GameEngine& game;
 	bool reloading = false;
 	int reloadTime = 0;
+	int spawnTime = 0;
 };
 
 #endif
