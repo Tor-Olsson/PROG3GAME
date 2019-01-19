@@ -72,10 +72,6 @@ void EarthDefense::keyDown(const SDL_Event& event) {
 	}
 }
 
-void EarthDefense::keyUp(const SDL_Event& event) {
-
-}
-
 EarthDefense::~EarthDefense()
 {
 }

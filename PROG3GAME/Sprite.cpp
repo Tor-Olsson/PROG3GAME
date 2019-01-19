@@ -2,11 +2,10 @@
 
 namespace GameEngine {
 
-	Sprite::Sprite(int x, int y, const std::string spritePath)	{
+	Sprite::Sprite(int x, int y, const std::string spritePath) {
 		SDL_Surface* spriteSurface = IMG_Load(spritePath.c_str());
-
 		if (spriteSurface == NULL) {
-			throw std::invalid_argument("Sprite-picture not found");		
+			throw std::invalid_argument("Sprite-picture not found");
 		}
 		w = system.getWidth();
 		h = system.getHeight();
@@ -21,7 +20,6 @@ namespace GameEngine {
 		if (spriteSurface == NULL) {
 			throw std::invalid_argument("Sprite-picture not found");
 		}
-
 		spriteTexture = SDL_CreateTextureFromSurface(system.getRenderer(), spriteSurface);
 		spriteRectangle = { spriteRectangle.x, spriteRectangle.y, spriteSurface->w, spriteSurface->h };
 		SDL_FreeSurface(spriteSurface);
@@ -30,10 +28,8 @@ namespace GameEngine {
 
 	bool Sprite::detectCollision(const std::vector<Sprite*> sprites) {
 		for (Sprite* s : sprites) {
-			
 			if (this != s) {
 				SDL_bool collision = SDL_HasIntersection(&getRectangle(), &s->getRectangle());
-
 				if (collision) {
 					collisioned = s;
 					return true;
@@ -52,11 +48,6 @@ namespace GameEngine {
 		SDL_RenderCopy(system.getRenderer(), spriteTexture, NULL, &spriteRectangle);
 	}
 
-	void Sprite::setWH(int w, int h) {
-		spriteRectangle.w = w;
-		spriteRectangle.h = h;
-	}
-
 	bool Sprite::outOfScreen() {
 		if (spriteRectangle.x > w || spriteRectangle.x < 0)
 			return true;
@@ -69,9 +60,8 @@ namespace GameEngine {
 		spriteRectangle.x = x;
 		spriteRectangle.y = y;
 	}
-	   
+
 	SDL_Rect Sprite::getRectangle() const {
 		return spriteRectangle;
 	}
-
 }

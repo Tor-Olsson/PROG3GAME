@@ -6,7 +6,6 @@ namespace GameEngine {
 	{
 	}
 
-
 	PlayerControlledSprite::~PlayerControlledSprite()
 	{
 	}

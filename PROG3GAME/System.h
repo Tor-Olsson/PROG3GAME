@@ -8,11 +8,6 @@
 #include <SDL_ttf.h>
 #include <SDL_mixer.h>
 
-/*
-*  AUTHOR Tor Olsson/tool2256
-*  Represents the window, with the renderer and other general settings  
-*/
-
 namespace GameEngine {
 
 	class System

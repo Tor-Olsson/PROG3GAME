@@ -11,7 +11,6 @@ namespace GameEngine {
 		Handles events in the game loop.
 		*/
 		virtual void tick(SDL_Event& event) {};
-
 		virtual ~MovingSprite();
 	
 	protected:

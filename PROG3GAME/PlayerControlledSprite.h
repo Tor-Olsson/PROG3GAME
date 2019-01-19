@@ -7,9 +7,6 @@ namespace GameEngine {
 	class PlayerControlledSprite : public MovingSprite
 	{
 	public:
-
-
-		
 		/*
 		Handles events in the game loop. Implementation forced to subclasses
 		*/

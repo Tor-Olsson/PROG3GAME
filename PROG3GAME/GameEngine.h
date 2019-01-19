@@ -2,7 +2,6 @@
 #define GAMEENGINE_H
 
 #include <vector>
-#include <string>
 #include <unordered_map>
 
 #include <SDL.h>
@@ -78,7 +77,7 @@ namespace GameEngine {
 		typedef void(*FunctionPointer)();
 		/*
 		Adds a user defined function
-		@param name the key shortcut
+		@param name the key shortcut, for example "A"
 		@param func the function
 		*/
 		void addFunction(FunctionPointer func, const char* name);

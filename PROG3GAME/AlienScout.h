@@ -1,8 +1,6 @@
 #ifndef ALIENSCOUT_H
 #define ALIENSCOUT_H
 
-#include <vector>
-
 #include "ComputerControlledSprite.h"
 #include "EarthDefenseMissile.h"
 #include "GameEngine.h"

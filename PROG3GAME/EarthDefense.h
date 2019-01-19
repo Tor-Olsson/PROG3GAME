@@ -12,8 +12,6 @@ public:
 	static EarthDefense* getInstance(GameEngine::GameEngine& g, int x, int y);
 	void tick(const SDL_Event& event) override;
 	void keyDown(const SDL_Event& event) override;
-	void keyUp(const SDL_Event& event) override;
-
 
 protected:
 	EarthDefense(GameEngine::GameEngine& g, int x, int y, const std::string spritePath);
@@ -23,7 +21,6 @@ private:
 	static const std::string spritePath;
 	GameEngine::GameEngine& game;
 	bool reloading = false;
-	bool right = false;
 	int reloadTime = 0;
 	int spawnTime = 0;
 };

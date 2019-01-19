@@ -6,8 +6,6 @@ namespace GameEngine {
 	{
 	}
 
-
-
 	ComputerControlledSprite::~ComputerControlledSprite()
 	{
 	}

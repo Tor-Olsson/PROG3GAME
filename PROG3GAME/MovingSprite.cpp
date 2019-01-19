@@ -6,9 +6,7 @@ namespace GameEngine {
 	{
 	}
 
-
 	MovingSprite::~MovingSprite()
 	{
 	}
-
 }

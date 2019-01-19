@@ -6,6 +6,7 @@
 #include <vector>
 
 #include <SDL.h>
+
 #include "System.h"
 
 namespace GameEngine {
@@ -59,7 +60,7 @@ namespace GameEngine {
 		@return true if the object is outside the size of the background, otherwise false
 		*/
 		bool outOfScreen();
-			   
+
 		/*
 		Handles events in the game loop. Implementation forced to subclasses
 		*/
@@ -83,14 +84,6 @@ namespace GameEngine {
 		@throws invalid_argument if the sprite can't be found
 		*/
 		Sprite(int x, int y, const std::string spritePath);
-		
-		/*
-		Sets the width and height of the triangle
-		@param w the width
-		@param h the height
-		POSSIBLY UNUSED
-		*/
-		void setWH(int w, int h);
 
 		/*
 		Changes the position on the screen

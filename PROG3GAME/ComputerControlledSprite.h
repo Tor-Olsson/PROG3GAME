@@ -13,6 +13,7 @@ namespace GameEngine {
 		Handles events in the game loop. Implementation forced to subclasses (game designers decision what the sprites should do)
 		*/
 		virtual void tick(const SDL_Event& event) = 0;
+
 		virtual ~ComputerControlledSprite();
 
 	protected:

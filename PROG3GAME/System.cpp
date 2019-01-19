@@ -13,7 +13,6 @@ namespace GameEngine {
 		if (TTF_Init() == -1) {
 			throw std::runtime_error(TTF_GetError());
 		}
-
 		window = SDL_CreateWindow("The Game", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 200, 200, 0);
 		renderer = SDL_CreateRenderer(window, -1, 0);
 	}
@@ -50,7 +49,6 @@ namespace GameEngine {
 		SDL_RenderClear(renderer);
 		SDL_RenderCopy(renderer, backgroundTexture, NULL, NULL);
 		SDL_RenderPresent(renderer);
-
 	}
 
 	void System::setBackgroundMusic(const std::string& musicPath) {

@@ -7,7 +7,6 @@ namespace GameEngine {
 	class FixedSprite : public Sprite
 	{
 	public:
-
 		/*
 		* Returns a new static instance of this class
 		* @param x the placement on the screen width

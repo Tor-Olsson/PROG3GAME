@@ -5,28 +5,23 @@
 #include "Sprite.h"
 #include "FixedSprite.h"
 
-#include <iostream> //REMOVE
-
 namespace GameEngine {
 
 	GameEngine::GameEngine()
 	{
 	}
-	int loopCount = 0;
+
 	void GameEngine::gameLoop(int fps) {
 		bool run = true;
 		SDL_Event event;
 		const int tickIntervall = 1000 / fps;
 
 		while (run) {
-
 			Uint32 nextTick = SDL_GetTicks() + tickIntervall;
 			while (SDL_PollEvent(&event)) {
-
 				if (event.type == SDL_QUIT) {
 					run = false;
-				}
-				
+				}				
 				if (event.type == SDL_KEYDOWN) {
 					if (userDefinedFunctions.count(event.key.keysym.sym) > 0)
 						userDefinedFunctions[event.key.keysym.sym]();
@@ -49,19 +44,16 @@ namespace GameEngine {
 						s->mouseUp(event);
 					}
 				}
-
 			}// end of inner while
 
 			handleSprites();
+
 			for (Sprite * s : sprites) {
 				s->tick(event);
-			}
-			for (Sprite * s : sprites) {
 				s->detectCollision(sprites);
 			}
 			redraw();
 			handleFPS(nextTick - SDL_GetTicks());
-
 		}// end of outer while
 	}
 
@@ -89,7 +81,6 @@ namespace GameEngine {
 		if (newSprite == NULL) {
 			throw std::invalid_argument("addSprite: Null not allowed");
 		}
-
 		spritesToAdd.push_back(newSprite);
 	}
 
@@ -108,11 +99,8 @@ namespace GameEngine {
 		spritesToAdd.clear();
 
 		for (Sprite * r : spritesToRemove) {
-
 			for (std::vector<Sprite*>::iterator s = sprites.begin(); s != sprites.end();) {
-
 				if (*s == r) {
-
 					s = sprites.erase(s);
 					delete r;
 				}
@@ -130,16 +118,13 @@ namespace GameEngine {
 		for (Sprite * s : sprites) {
 			s->draw();
 		}
-
 		SDL_RenderPresent(system.getRenderer());
 	}
 
 	void GameEngine::handleFPS(int delay) {
-
 		if (delay > 0) {
 			SDL_Delay(delay);
 		}
-		loopCount++;
 	}
 
 	void GameEngine::addFunction(FunctionPointer func, const char* x) {
@@ -153,7 +138,5 @@ namespace GameEngine {
 		for (Sprite * c : sprites) {
 			delete(c);
 		}
-
 	}
-
 }

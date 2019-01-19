@@ -3,14 +3,12 @@
 
 #include "ComputerControlledSprite.h"
 #include "GameEngine.h"
-#include <iostream>
 
 class EarthDefenseMissile : public GameEngine::ComputerControlledSprite
 {
 public:
 	static EarthDefenseMissile* getInstance(GameEngine::GameEngine& g, int x, int y);
 	void tick(const SDL_Event& event);
-
 
 protected:
 	EarthDefenseMissile(GameEngine::GameEngine& g, int x, int y, const std::string spritePath);
