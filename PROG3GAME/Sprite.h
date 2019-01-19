@@ -20,7 +20,7 @@ namespace GameEngine {
 		/*
 		Forbids allocation through = operator
 		*/
-		//const Sprite& operator = (const Sprite&) = delete;
+		const Sprite& operator = (const Sprite&) = delete;
 
 		/*
 		returns the rectangle
@@ -41,8 +41,23 @@ namespace GameEngine {
 		*/
 		void changeSprite(const std::string spritePath);
 
+		/*
+		Detects collisions of rectangles belonging to sprites, and saves the other object in *collisioned
+		@param sprites the vector with all the sprites to check collisions with
+		@return true if a collision was found, otherwise false
+		*/
 		bool detectCollision(const std::vector<Sprite*> sprites);
+
+		/*
+		Returns a pointer to the sprite that this sprite have collisioned with
+		@return a pointer to the sprite that this sprite have collided with, otherwise nullptr
+		*/
 		Sprite* getCollision();
+
+		/*
+		Checks if the Sprite is off screen
+		@return true if the object is outside the size of the background, otherwise false
+		*/
 		bool outOfScreen();
 			   
 		/*
@@ -79,7 +94,6 @@ namespace GameEngine {
 	private:
 		SDL_Rect spriteRectangle;
 		SDL_Texture* spriteTexture;
-		bool pang;
 		Sprite* collisioned;
 		int w;
 		int h;

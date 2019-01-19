@@ -1,7 +1,5 @@
 #include "Sprite.h"
 
-#include <iostream>
-
 namespace GameEngine {
 
 	Sprite::Sprite(int x, int y, const std::string spritePath)	{
@@ -38,12 +36,10 @@ namespace GameEngine {
 
 				if (collision) {
 					collisioned = s;
-					pang = true;
 					return true;
 				}
 			}
 		}
-		pang = false;
 		collisioned = nullptr;
 		return false;
 	}
