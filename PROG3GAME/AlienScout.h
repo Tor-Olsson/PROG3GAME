@@ -13,7 +13,7 @@ public:
 	static AlienScout* getInstance(GameEngine::GameEngine& g, int x, int y);
 	void tick(const SDL_Event& event);
 
-	~AlienScout();
+
 
 protected:
 	AlienScout(GameEngine::GameEngine& g, int x, int y, const std::string spritePath);
@@ -21,6 +21,7 @@ protected:
 private:
 	GameEngine::GameEngine& game;
 	static const std::string spritePath;
+	~AlienScout();
 };
 
 #endif

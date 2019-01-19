@@ -15,12 +15,13 @@ public:
 	void tick(const SDL_Event& event) override;
 	void keyDown(const SDL_Event& event) override;
 	void keyUp(const SDL_Event& event) override;
-	~EarthDefense();
+
 
 protected:
 	EarthDefense(GameEngine::GameEngine& g, int x, int y, const std::string spritePath);
 
 private:
+	~EarthDefense();
 	static const std::string spritePath;
 	GameEngine::GameEngine& game;
 	bool reloading = false;

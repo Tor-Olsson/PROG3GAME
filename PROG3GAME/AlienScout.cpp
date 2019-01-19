@@ -33,4 +33,5 @@ AlienScout* AlienScout::getInstance(GameEngine::GameEngine& g, int x, int y) {
 
 AlienScout::~AlienScout()
 {
+
 }

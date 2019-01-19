@@ -23,4 +23,5 @@ void EarthDefenseMissile::tick(const SDL_Event& event) {
 
 EarthDefenseMissile::~EarthDefenseMissile()
 {
+
 }

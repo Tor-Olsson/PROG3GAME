@@ -17,7 +17,7 @@ namespace GameEngine {
 		static FixedSprite* getInstance(int x, int y, const std::string spritePath);
 
 
-		~FixedSprite();
+		virtual ~FixedSprite();
 		void tick(const SDL_Event& event) {};
 
 	protected:

@@ -12,7 +12,7 @@ namespace GameEngine {
 		virtual void keyDown(const SDL_Event& event) {};
 		virtual void keyUp(const SDL_Event& event) {};
 		virtual void tick(const SDL_Event& event) = 0;
-		~PlayerControlledSprite();
+		virtual ~PlayerControlledSprite();
 	protected:
 		PlayerControlledSprite(int x, int y, const std::string spritePath);
 	};

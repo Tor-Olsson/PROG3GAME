@@ -8,7 +8,7 @@ namespace GameEngine {
 	{
 	public:
 		virtual void tick(SDL_Event& event) {};
-		~MovingSprite();
+		virtual ~MovingSprite();
 	
 	protected:
 		MovingSprite(int x, int y, const std::string spritePath);
