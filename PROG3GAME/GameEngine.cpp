@@ -5,7 +5,7 @@
 #include "Sprite.h"
 #include "FixedSprite.h"
 
-#define FPS 40
+#include <iostream> //REMOVE
 
 namespace GameEngine {
 
@@ -13,11 +13,10 @@ namespace GameEngine {
 	{
 	}
 	int loopCount = 0;
-	void GameEngine::gameLoop() {
+	void GameEngine::gameLoop(int fps) {
 		bool run = true;
 		SDL_Event event;
-
-		const int tickIntervall = 1000 / FPS;
+		const int tickIntervall = 1000 / fps;
 
 		while (run) {
 
@@ -27,8 +26,10 @@ namespace GameEngine {
 				if (event.type == SDL_QUIT) {
 					run = false;
 				}
-
+				
 				if (event.type == SDL_KEYDOWN) {
+					if (userDefinedFunctions.count(event.key.keysym.sym) > 0)
+						userDefinedFunctions[event.key.keysym.sym]();
 					for (Sprite * s : sprites) {
 						s->keyDown(event);
 					}
@@ -49,12 +50,7 @@ namespace GameEngine {
 					}
 				}
 
-				
-				//kolla kortkommandon
-
 			}// end of inner while
-
-
 
 			handleSprites();
 			for (Sprite * s : sprites) {
@@ -144,6 +140,12 @@ namespace GameEngine {
 			SDL_Delay(delay);
 		}
 		loopCount++;
+	}
+
+	void GameEngine::addFunction(FunctionPointer func, const char* x) {
+		SDL_Keycode keyCode = SDL_GetKeyFromName(x);
+		if (keyCode != 0)
+			userDefinedFunctions[keyCode] = func;
 	}
 
 	GameEngine::~GameEngine()

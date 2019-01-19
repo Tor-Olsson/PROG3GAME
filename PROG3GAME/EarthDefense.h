@@ -1,13 +1,10 @@
 #ifndef EARTHDEFENSE_H
 #define EARTHDEFENSE_H
 
-#include <vector>
-
 #include "PlayerControlledSprite.h"
 #include "EarthDefenseMissile.h"
 #include "AlienScout.h"
 #include "GameEngine.h"
-#include "Life.h"
 
 class EarthDefense : public GameEngine::PlayerControlledSprite
 {

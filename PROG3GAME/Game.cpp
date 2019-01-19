@@ -1,15 +1,11 @@
 #include <SDL.h>
 
-#include <iostream> //test
-#include <ctime> //for random
 
 #include "GameEngine.h"
 #include "Life.h"
 #include "AlienScout.h"
 #include "EarthDefense.h"
 #include "EarthDefenseMissile.h"
-
-#define LIVES 3
 
 GameEngine::GameEngine game;
 
@@ -39,13 +35,18 @@ void addPlayer() {
 	game.addSprite(player);
 }
 
+void skriv() {
+	std::cout << "User defined function \n";
+}
+
 
 int main(int argc, char** argv) {
 	
 	setUpGame();
 	addPlayer();
 	addEnemies();
-
-	game.gameLoop();
+	void(*fpek)() = skriv;
+	game.addFunction(fpek, "A");
+	game.gameLoop(50);
 	return 0;
 }

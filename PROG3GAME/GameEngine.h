@@ -2,6 +2,8 @@
 #define GAMEENGINE_H
 
 #include <vector>
+#include <string>
+#include <unordered_map>
 
 #include <SDL.h>
 #include <SDL_image.h>
@@ -11,12 +13,6 @@
 #include "System.h"
 #include "Sprite.h"
 
-/*
-*  AUTHOR Tor Olsson/tool2256
-*  Containing the main engine with the sprites
-*/
-
-
 namespace GameEngine {
 
 	class GameEngine
@@ -25,8 +21,9 @@ namespace GameEngine {
 		GameEngine();
 		/*
 		*  The main loop
+		@param fps frames per second the loop should run
 		*/
-		void gameLoop();
+		void gameLoop(int fps);
 
 		/*
 		sets the font
@@ -78,12 +75,22 @@ namespace GameEngine {
 		*/
 		bool removeSprite(Sprite* sprite);
 
+		typedef void(*FunctionPointer)();
+		/*
+		Adds a user defined function
+		@param name the key shortcut
+		@param func the function
+		*/
+		void addFunction(FunctionPointer func, const char* name);
+
 		~GameEngine();
 
 	private:
 		std::vector<Sprite*> sprites;
 		std::vector<Sprite*> spritesToAdd;
 		std::vector<Sprite*> spritesToRemove;
+
+		std::unordered_map<SDL_Keycode, FunctionPointer> userDefinedFunctions;
 
 		/*
 		Adds new sprites to the vector and removes the one to be removed
