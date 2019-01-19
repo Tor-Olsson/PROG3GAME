@@ -19,6 +19,7 @@ private:
 	~EarthDefenseMissile();
 	static const std::string spritePath;
 	GameEngine::GameEngine& game;
+	int tickCount;
 };
 
 #endif
