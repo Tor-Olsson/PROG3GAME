@@ -68,7 +68,14 @@ namespace GameEngine {
 		*/
 		void drawBackground();
 
+		/*
+		@return the width of the window
+		*/
 		int getWidth() { return w; }
+
+		/*
+		@return the height of the window
+		*/
 		int getHeight() { return h; }
 
 		~System();

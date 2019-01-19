@@ -7,7 +7,11 @@ namespace GameEngine {
 	class MovingSprite : public Sprite
 	{
 	public:
+		/*
+		Handles events in the game loop.
+		*/
 		virtual void tick(SDL_Event& event) {};
+
 		virtual ~MovingSprite();
 	
 	protected:

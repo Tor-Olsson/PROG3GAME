@@ -9,7 +9,7 @@ Paths can be changed in setUpGame() in Game.cpp
 
 Controls:
 Left and right arrow to move the tank.
-Up arrow to shoot.
+Up arrow to shoot (for some reason SDLK_SPACE did not work on my computer, so we will have to make do with the up-key).
 
 Music downloaded from https://patrickdearteaga.com/chiptune-8-bit-retro/ published under Creative Commons license. Author Patrick de Arteaga.
 Background downloaded https://opengameart.org/content/mountain-at-dusk-background published under Creative Commons license. Author ansimuz.

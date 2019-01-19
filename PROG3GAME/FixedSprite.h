@@ -15,10 +15,13 @@ namespace GameEngine {
 		* @param spritePath path to the picture to be used
 		*/
 		static FixedSprite* getInstance(int x, int y, const std::string spritePath);
-
-
-		virtual ~FixedSprite();
+		
+		/*
+		Handles events in the game loop. Implemented as empty since fixed sprites usually don't do much.
+		*/
 		void tick(const SDL_Event& event) {};
+
+		virtual ~FixedSprite();		
 
 	protected:
 		FixedSprite(int x, int y, const std::string spritePath);

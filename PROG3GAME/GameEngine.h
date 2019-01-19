@@ -2,7 +2,6 @@
 #define GAMEENGINE_H
 
 #include <vector>
-#include <ctime>
 
 #include <SDL.h>
 
