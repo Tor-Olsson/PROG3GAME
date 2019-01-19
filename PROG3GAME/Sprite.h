@@ -65,6 +65,14 @@ namespace GameEngine {
 		*/
 		virtual void tick(const SDL_Event& event) = 0;
 
+		/*
+		Keyboard and mouse functions. Implementation should be the game designers decision
+		*/
+		virtual void mouseDown(const SDL_Event& event) {};
+		virtual void mouseUp(const SDL_Event& event) {};
+		virtual void keyDown(const SDL_Event& event) {};
+		virtual void keyUp(const SDL_Event& event) {};
+
 		virtual ~Sprite() { SDL_DestroyTexture(spriteTexture); };
 	protected:
 		/*

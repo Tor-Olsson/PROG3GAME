@@ -1,12 +1,13 @@
 #ifndef EARTHDEFENSE_H
 #define EARTHDEFENSE_H
 
-#include <ctime>
+#include <vector>
 
 #include "PlayerControlledSprite.h"
 #include "EarthDefenseMissile.h"
 #include "AlienScout.h"
 #include "GameEngine.h"
+#include "Life.h"
 
 class EarthDefense : public GameEngine::PlayerControlledSprite
 {
@@ -25,6 +26,7 @@ private:
 	static const std::string spritePath;
 	GameEngine::GameEngine& game;
 	bool reloading = false;
+	bool right = false;
 	int reloadTime = 0;
 	int spawnTime = 0;
 };

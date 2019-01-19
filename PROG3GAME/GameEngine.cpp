@@ -28,6 +28,28 @@ namespace GameEngine {
 					run = false;
 				}
 
+				if (event.type == SDL_KEYDOWN) {
+					for (Sprite * s : sprites) {
+						s->keyDown(event);
+					}
+				}
+				if (event.type == SDL_KEYUP) {
+					for (Sprite * s : sprites) {
+						s->keyUp(event);
+					}
+				}
+				if (event.type == SDL_MOUSEBUTTONDOWN) {
+					for (Sprite * s : sprites) {
+						s->mouseDown(event);
+					}
+				}
+				if (event.type == SDL_MOUSEBUTTONUP) {
+					for (Sprite * s : sprites) {
+						s->mouseUp(event);
+					}
+				}
+
+				
 				//kolla kortkommandon
 
 			}// end of inner while
@@ -61,6 +83,10 @@ namespace GameEngine {
 
 	void GameEngine::setBackgroundMusic(const std::string& musicPath) {
 		system.setBackgroundMusic(musicPath);
+	}
+
+	TTF_Font* GameEngine::getFont() const {
+		return system.getFont();
 	}
 
 	void GameEngine::addSprite(Sprite* newSprite) {

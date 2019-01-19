@@ -4,6 +4,9 @@
 #include <vector>
 
 #include <SDL.h>
+#include <SDL_image.h>
+#include <SDL_ttf.h>
+#include <SDL_mixer.h>
 
 #include "System.h"
 #include "Sprite.h"
@@ -32,6 +35,12 @@ namespace GameEngine {
 		@throws invalid_argument if the font could not be found
 		*/
 		void setFont(const std::string& fontPath, int size);
+
+		/*
+		*  returns the current font
+		*  @return the current font
+		*/
+		TTF_Font* getFont() const;
 
 		/*
 		Sets the title of the window

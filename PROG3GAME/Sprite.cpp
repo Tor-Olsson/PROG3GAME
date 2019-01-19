@@ -17,7 +17,7 @@ namespace GameEngine {
 
 	void Sprite::changeSprite(const std::string spritePath) {
 		SDL_Surface* spriteSurface = IMG_Load(spritePath.c_str());
-
+		SDL_DestroyTexture(spriteTexture);
 		if (spriteSurface == NULL) {
 			throw std::invalid_argument("Sprite-picture not found");
 		}

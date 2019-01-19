@@ -10,7 +10,7 @@
   <Class Name="GameEngine::Sprite">
     <Position X="6" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABBCAABAAAAAACAAQAIgAAACgAAAACAQQAgAAAAAAAM=</HashCode>
+      <HashCode>ABBCAABAQAAACCAAAIIgAAASgAAAACAQQAggAAAAAAM=</HashCode>
       <FileName>Sprite.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -67,14 +67,14 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>gABAAAAAQAAACAAAAIAAAAAQAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>gABAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
       <FileName>PlayerControlledSprite.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="EarthDefense">
     <Position X="11" Y="10.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABAAAAAAACQCAAAAIAAAAAAAAEAAAYYAAAAAAAEAAA=</HashCode>
+      <HashCode>AABAAAAAAACQCAAAAIAAAAAAAAEAAAYYAAAAAAAEgAA=</HashCode>
       <FileName>EarthDefense.h</FileName>
     </TypeIdentifier>
   </Class>
